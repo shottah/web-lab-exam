@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{%block head%}
+<title>Course Listing</title>
+{%endblock%}
+
+{%block body%}
+    <h2>Courses</h2>
+    {% if courses %}
+    <table class="table">
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Credits</th>
+        </tr>
+        {% for c in courses %}
+        <tr>
+            <td>{{c.code}}</td>
+            <td>{{c.name}}</td>
+            <td>{{c.credits}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{%endblock%}
